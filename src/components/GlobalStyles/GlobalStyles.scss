@@ -1,0 +1,49 @@
+@import 'normalize.css';
+
+:root {
+    --primary: #143971;
+    --default-layout-header-height: 80px;
+    --default-layout-width: 1024px;
+    --default-layout-horizontal-spacer: 24px;
+    --default-layout-home-width: 1260px;
+    --white: #fff;
+    --font-family: 'GMVDINPro', sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizespeed;
+}
+@font-face {
+    font-family: GMVDINPro;
+    src: url('/assets/Fonts/GMVDINPro-Bold.woff2');
+    font-weight: 400;
+}
+@font-face {
+    font-family: GMVDINPro;
+    src: url('/assets/Fonts/GMVDINPro.woff2');
+    font-weight: 400;
+}
+@font-face {
+    font-family: GMVDINPro;
+    src: url('/assets/Fonts/GMVDINPro-Bold.woff2');
+    font-weight: 600;
+}
+@font-face {
+    font-family: GMVDINPro;
+    src: url('/assets/Fonts/GMVDINPro-Bold.woff2');
+    font-weight: 700;
+}
+@font-face {
+    font-family: GMVDINPro;
+    src: url('/assets/Fonts/GMVDINPro-Bold.woff2');
+    font-weight: 700;
+}

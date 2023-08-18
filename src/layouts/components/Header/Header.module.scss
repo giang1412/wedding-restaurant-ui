@@ -1,0 +1,32 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--default-layout-header-height);
+    box-shadow: 0px 1px 1px rgb(0 0 0 /12%);
+    z-index: 10;
+    background-color: var(--white);
+}
+.inner {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 0 80px;
+}
+.logo {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.btn-menu {
+    display: flex;
+    margin-left: 80px;
+}
+.btn-register {
+    display: flex;
+    align-items: center;
+    padding: 20px 0px;
+}
