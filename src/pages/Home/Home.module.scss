@@ -1,32 +1,32 @@
 .wrapper {
     margin-top: var(--default-layout-header-height);
-    height: 2000px;
+    //height: 2000px;
 }
 
-.slideshow-controls {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
+// .slideshow-controls {
+//     display: flex;
+//     justify-content: space-between;
+//     margin-top: 10px;
+// }
 
-.slideshow-control-button {
-    background-color: #ccc;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+// .slideshow-control-button {
+//     background-color: #ccc;
+//     color: #fff;
+//     border: none;
+//     padding: 10px 20px;
+//     border-radius: 4px;
+//     cursor: pointer;
+//     transition: background-color 0.3s ease;
+// }
 
-.slideshow-control-button:hover {
-    background-color: #555;
-}
+// .slideshow-control-button:hover {
+//     background-color: #555;
+// }
 
-.slideshow-control-button.previous {
-    margin-right: 10px;
-}
+// .slideshow-control-button.previous {
+//     margin-right: 10px;
+// }
 
-.slideshow-control-button.next {
-    margin-left: 10px;
-}
+// .slideshow-control-button.next {
+//     margin-left: 10px;
+// }

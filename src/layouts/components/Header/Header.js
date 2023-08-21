@@ -33,8 +33,12 @@ function Header() {
                 </div>
 
                 <div className={cx('btn-register')}>
-                    <Button primary>ĐĂNG KÝ</Button>
-                    <Button primary>ĐĂNG NHẬP</Button>
+                    <Link to={`/register`}>
+                        <Button primary> ĐĂNG KÝ </Button>
+                    </Link>
+                    <Link to={`/login`}>
+                        <Button primary>ĐĂNG NHẬP</Button>
+                    </Link>
                 </div>
             </div>
         </header>

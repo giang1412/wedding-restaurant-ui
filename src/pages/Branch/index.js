@@ -1,9 +1,1 @@
-function Branch() {
-    return (
-        <>
-            <h1>Branch page</h1>
-        </>
-    );
-}
-
-export default Branch;
+export { default } from './Branch';

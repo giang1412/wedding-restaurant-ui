@@ -24,7 +24,7 @@ function Slideshow({ images, interval = 3000 }) {
     };
 
     return (
-        <div>
+        <div className={cx('wrapper')}>
             {/* <button onClick={previousImage}>Previous</button> */}
             <img
                 className={cx('image')}

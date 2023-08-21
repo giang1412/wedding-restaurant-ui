@@ -1,5 +1,11 @@
+.wrapper {
+    display: inline-block;
+    justify-content: center;
+    width: var(--default-layout-home-width);
+    height: 750px; //auto
+}
 .image {
-    display: block;
+    //display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
 }
