@@ -6,8 +6,8 @@
 }
 .title {
     font-size: 32px;
-    color: #e5cc5f;
-    font-family: inherit;
+    color: var(--color-title);
+    font-family: Helvetica;
     &:after {
         content: '';
         display: block;
@@ -25,4 +25,5 @@
     max-height: 100px;
     overflow: hidden;
     text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }

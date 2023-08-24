@@ -1,0 +1,32 @@
+.menu-item {
+    margin: 35px 8px;
+    color: var(--color-title);
+    font-weight: 600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    white-space: wrap;
+    width: 400px;
+    &:hover {
+        cursor: pointer;
+        color: #ccc;
+    }
+    // &:after {
+    //     content: '';
+    //     display: block;
+    //     width: 100px;
+    //     height: 1px;
+    //     background: #452f20;
+    //     margin: 15px auto 0 auto;
+    // }
+    // &:before {
+    //     content: '';
+    //     display: block;
+    //     width: 100px;
+    //     height: 1px;
+    //     background: #452f20;
+    //     margin: 15px auto 0 auto;
+    // }
+}
