@@ -1,16 +1,15 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './MenuHall.module.scss';
-import MenuHallItem from '~/components/MenuHallItem';
+import HallIemInfo from '~/components/HallItemInfo';
 
 const cx = classNames.bind(styles);
 function MenuHall({ halls, onItemClick }) {
-    //const { data } = props;
     return (
         <div className={cx('menu-wrapper')}>
             <ul className={cx('menu-hall')}>
                 {halls.map((hall) => (
-                    <MenuHallItem
+                    <HallIemInfo
                         key={hall.id}
                         hall={hall}
                         onItemClick={onItemClick}

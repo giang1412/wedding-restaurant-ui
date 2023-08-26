@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import styles from './ItemHall.module.scss';
+import styles from './HallItem.module.scss';
 const cx = classNames.bind(styles);
-function ItemHall({ hall }) {
+function HallItem({ hall }) {
     return (
         <div className={cx('inner')}>
             <div className={cx('title')}>{hall.name}</div>
@@ -19,4 +19,4 @@ function ItemHall({ hall }) {
     );
 }
 
-export default ItemHall;
+export default HallItem;

@@ -2,7 +2,7 @@
 import classNames from 'classnames/bind';
 import styles from './Hall.module.scss';
 import MenuHall from '~/components/MenuHall';
-import ItemHall from '~/components/ItemHall/ItemHall';
+import HallItem from '~/components/HallItem';
 import { useState } from 'react';
 //import ItemHall from '~/components/ItemHall/ItemHall';
 const cx = classNames.bind(styles);
@@ -40,7 +40,6 @@ function Hall() {
         },
     ];
 
-    const [halls, setHalls] = useState(listHall);
     const [selectedHall, setSelectedHall] = useState(listHall[0]);
 
     const handleHallClick = (hall) => {
@@ -49,7 +48,7 @@ function Hall() {
     return (
         <div className={cx('wrapper')}>
             <MenuHall halls={listHall} onItemClick={handleHallClick} />
-            {selectedHall && <ItemHall hall={selectedHall} />}
+            {selectedHall && <HallItem hall={selectedHall} />}
         </div>
     );
 }
