@@ -9,7 +9,7 @@ function HallItemInfo({ hall, onItemClick }) {
     };
     return (
         <Button rounded className={cx('menu-item')} onClick={handleClick}>
-            {hall.name}
+            {hall.hallName}
         </Button>
     );
 }

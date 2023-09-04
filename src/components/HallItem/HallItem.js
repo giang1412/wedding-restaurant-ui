@@ -3,10 +3,11 @@ import classNames from 'classnames/bind';
 import styles from './HallItem.module.scss';
 const cx = classNames.bind(styles);
 function HallItem({ hall }) {
+    console.log(hall);
     return (
         <div className={cx('inner')}>
-            <div className={cx('title')}>{hall.name}</div>
-            <div className={cx('desc')}>{hall.desc}</div>
+            <div className={cx('title')}>{hall.hallName}</div>
+            <div className={cx('desc')}>{hall.priceMorning}</div>
 
             <div className={cx('image-block')}>
                 <img

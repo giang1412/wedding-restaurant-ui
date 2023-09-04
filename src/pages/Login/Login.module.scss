@@ -1,0 +1,35 @@
+.wrapper {
+    display: flex;
+    margin-top: var(--default-layout-header-height);
+    width: var(--default-layout-home-width);
+    height: 500px;
+    text-align: center;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+}
+.form-login {
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-control {
+    background: #f1f3f7;
+    border: none !important;
+    box-shadow: none !important;
+    height: auto;
+    padding-right: 200px;
+    padding-left: 20px;
+    height: 56px;
+    font-size: 1em;
+    font-weight: 500;
+}
+.btn-login {
+    margin-top: 30px;
+}

@@ -10,7 +10,7 @@ function MenuHall({ halls, onItemClick }) {
             <ul className={cx('menu-hall')}>
                 {halls.map((hall) => (
                     <HallIemInfo
-                        key={hall.id}
+                        key={hall.hallID}
                         hall={hall}
                         onItemClick={onItemClick}
                     />

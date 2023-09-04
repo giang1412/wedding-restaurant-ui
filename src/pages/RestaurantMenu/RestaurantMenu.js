@@ -45,9 +45,17 @@ function RestaurantMenu() {
     return (
         <div className={cx('wrapper')}>
             <h2 className={cx('title')}>THỰC ĐƠN TỰ CHỌN</h2>
+            <p className={cx('desc')}>
+                Được các chuyên gia ẩm thực giàu kinh nghiệm của Grand Palace
+                chế biến, thực đơn của chúng tôi luôn được đầu tư và đổi mới
+                liên tục sẽ mang đến cho thực khách những món ăn đa dạng và có
+                sự dung hoà giữa văn hoá ẩm thực Á - Âu, đáp ứng tất cả các nhu
+                cầu của quý khách.
+            </p>
             <div className={cx('list-item')}>
                 {listMenu.map((value) => (
                     <MenuItem
+                        key={value.id}
                         image={value.image}
                         name={value.name}
                         price={value.price}
