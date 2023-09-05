@@ -7,6 +7,7 @@ import Service from '~/pages/RestaurantService';
 import Hall from '~/pages/Hall';
 import Feedback from '~/pages/Feedback';
 import Login from '~/pages/Login';
+import Register from '~/pages/Register';
 //Public routes
 const publicRoutes = [
     { path: config.routes.home, component: Home },
@@ -16,7 +17,7 @@ const publicRoutes = [
     { path: config.routes.service, component: Service },
     { path: config.routes.feedback, component: Feedback },
     { path: config.routes.login, component: Login },
-    //{ path: config.routes.register, component:}
+    { path: config.routes.register, component: Register },
 ];
 
 const privateRoutes = [];

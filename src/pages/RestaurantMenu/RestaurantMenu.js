@@ -1,47 +1,62 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import styles from './RestaurantMenu.module.scss';
 import MenuItem from '~/components/MenuItem';
+import Apis, { endpoints } from '~/utils/Apis';
 const cx = classNames.bind(styles);
 function RestaurantMenu() {
-    const listMenu = [
-        {
-            id: 1,
-            name: 'Vẹm xanh bơ tỏi',
-            image: 'https://riversidepalace.vn/resizemultidata/vem-xanh-phu-bo-toi.png',
-            price: 300000,
-        },
-        {
-            id: 2,
-            name: 'Vẹm xanh bơ tỏi',
-            image: 'https://riversidepalace.vn/resizemultidata/vem-xanh-phu-bo-toi.png',
-            price: 300000,
-        },
-        {
-            id: 3,
-            name: 'Vẹm xanh bơ tỏi',
-            image: 'https://riversidepalace.vn/resizemultidata/vem-xanh-phu-bo-toi.png',
-            price: 300000,
-        },
-        {
-            id: 4,
-            name: 'Vẹm xanh bơ tỏi',
-            image: 'https://riversidepalace.vn/resizemultidata/vem-xanh-phu-bo-toi.png',
-            price: 300000,
-        },
-        {
-            id: 5,
-            name: 'Vẹm xanh bơ tỏi',
-            image: 'https://riversidepalace.vn/resizemultidata/vem-xanh-phu-bo-toi.png',
-            price: 300000,
-        },
-        {
-            id: 6,
-            name: 'Vẹm xanh bơ tỏi',
-            image: 'https://riversidepalace.vn/resizemultidata/vem-xanh-phu-bo-toi.png',
-            price: 300000,
-        },
-    ];
+    // const listMenu = [
+    //     {
+    //         id: 1,
+    //         name: 'Vẹm xanh bơ tỏi',
+    //         image: 'https://riversidepalace.vn/resizemultidata/vem-xanh-phu-bo-toi.png',
+    //         price: 300000,
+    //     },
+    //     {
+    //         id: 2,
+    //         name: 'Vẹm xanh bơ tỏi',
+    //         image: 'https://riversidepalace.vn/resizemultidata/vem-xanh-phu-bo-toi.png',
+    //         price: 300000,
+    //     },
+    //     {
+    //         id: 3,
+    //         name: 'Vẹm xanh bơ tỏi',
+    //         image: 'https://riversidepalace.vn/resizemultidata/vem-xanh-phu-bo-toi.png',
+    //         price: 300000,
+    //     },
+    //     {
+    //         id: 4,
+    //         name: 'Vẹm xanh bơ tỏi',
+    //         image: 'https://riversidepalace.vn/resizemultidata/vem-xanh-phu-bo-toi.png',
+    //         price: 300000,
+    //     },
+    //     {
+    //         id: 5,
+    //         name: 'Vẹm xanh bơ tỏi',
+    //         image: 'https://riversidepalace.vn/resizemultidata/vem-xanh-phu-bo-toi.png',
+    //         price: 300000,
+    //     },
+    //     {
+    //         id: 6,
+    //         name: 'Vẹm xanh bơ tỏi',
+    //         image: 'https://riversidepalace.vn/resizemultidata/vem-xanh-phu-bo-toi.png',
+    //         price: 300000,
+    //     },
+    // ];
+    const [data, setData] = useState([]);
+    const loadMenu = async () => {
+        try {
+            let res = await Apis.get(endpoints['menu']);
+            setData(res.data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+    useEffect(() => {
+        loadMenu();
+    }, []);
+
+    console.log(data);
     return (
         <div className={cx('wrapper')}>
             <h2 className={cx('title')}>THỰC ĐƠN TỰ CHỌN</h2>
@@ -53,11 +68,11 @@ function RestaurantMenu() {
                 cầu của quý khách.
             </p>
             <div className={cx('list-item')}>
-                {listMenu.map((value) => (
+                {data.map((value) => (
                     <MenuItem
-                        key={value.id}
+                        key={value.menuID}
                         image={value.image}
-                        name={value.name}
+                        name={value.menuName}
                         price={value.price}
                     />
                 ))}

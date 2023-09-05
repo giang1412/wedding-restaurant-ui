@@ -52,7 +52,7 @@ function Branch() {
         <div className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <h2 className={cx('title')}>TRUNG TÂM TIỆC CƯỚI</h2>
-                <Link to={`/hall`} className={cx('branch-item')}>
+                <Link to={`/menu`} className={cx('branch-item')}>
                     {productsBranch.map((product) => (
                         <BranchItem
                             key={product.id}

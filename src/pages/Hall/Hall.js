@@ -26,26 +26,12 @@ function Hall() {
     useEffect(() => {
         loadHalls();
     }, []);
-    // const fetchData = async () => {
-    //     try {
-    //         const response = await axios.get(
-    //             'http://localhost:8080/QL_TiecCuoi/api/halls/',
-    //         );
-    //         setData(response.data);
-    //         setSelectedHall(response.data[0]);
-    //         setLoading(false);
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
-    // };
-    // useEffect(() => {
-    //     fetchData();
-    // }, []);
 
     const handleHallClick = (hall) => {
         setSelectedHall(hall);
     };
 
+    console.log(data);
     return (
         <div className={cx('wrapper')}>
             <MenuHall halls={data} onItemClick={handleHallClick} />

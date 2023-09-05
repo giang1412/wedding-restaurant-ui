@@ -1,6 +1,4 @@
 import axios from 'axios';
-//import cookie from 'react-cookies';
-// import { Cookies } from 'react-cookie';
 import cookie from 'react-cookies';
 const SERVER_CONTEXT = '/QL_TiecCuoi';
 const SERVER = 'http://localhost:8080';
@@ -8,11 +6,9 @@ const SERVER = 'http://localhost:8080';
 export const endpoints = {
     halls: `${SERVER_CONTEXT}/api/halls/`,
     login: `${SERVER_CONTEXT}/api/login/`,
-
-    // products: `${SERVER_CONTEXT}/api/products/`,
-    // login: `${SERVER_CONTEXT}/api/login/`,
     'current-user': `${SERVER_CONTEXT}/api/current-user/`,
-    // register: `${SERVER_CONTEXT}/api/users/`,
+    register: `${SERVER_CONTEXT}/api/users/`,
+    menu: `${SERVER_CONTEXT}/api/menu/`,
     // pay: `${SERVER_CONTEXT}/api/pay/`,
     // details: (productId) => `${SERVER_CONTEXT}/api/products/${productId}/`,
     // comments: (productId) =>

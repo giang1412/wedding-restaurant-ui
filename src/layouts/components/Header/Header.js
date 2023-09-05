@@ -3,10 +3,18 @@ import styles from './Header.module.scss';
 import { Link } from 'react-router-dom';
 import config from '~/config';
 import images from '~/assets/Images';
-
+import Image from '~/components/Image';
 import Button from '~/components/Button';
+import { useContext } from 'react';
+import { MyUserContext } from '~/App';
 const cx = classNames.bind(styles);
 function Header() {
+    const [user, dispatch] = useContext(MyUserContext);
+    const logout = () => {
+        dispatch({
+            type: 'logout',
+        });
+    };
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -33,12 +41,38 @@ function Header() {
                 </div>
 
                 <div className={cx('btn-register')}>
-                    <Link to={`/register`}>
-                        <Button primary> ĐĂNG KÝ </Button>
-                    </Link>
-                    <Link to={`/login`}>
-                        <Button primary>ĐĂNG NHẬP</Button>
-                    </Link>
+                    {user ? (
+                        <>
+                            <Image
+                                src={user.profileImage}
+                                className={cx('user-avatar')}
+                                alt="Nguyen Van A"
+                                // fallback="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
+                            />
+                            <Link className={cx('user-name')} to={`/`}>
+                                {user.lastName}
+                            </Link>
+                            <Link to={`/`}>
+                                <Button outline onClick={logout} small>
+                                    ĐĂNG XUẤT
+                                </Button>
+                            </Link>
+                        </>
+                    ) : (
+                        <>
+                            <Link className={cx('btn-action')} to={`/register`}>
+                                <Button primary small>
+                                    {' '}
+                                    ĐĂNG KÝ{' '}
+                                </Button>
+                            </Link>
+                            <Link className={cx('btn-action')} to={`/login`}>
+                                <Button primary small>
+                                    ĐĂNG NHẬP
+                                </Button>
+                            </Link>
+                        </>
+                    )}
                 </div>
             </div>
         </header>
