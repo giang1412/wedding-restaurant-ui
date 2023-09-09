@@ -7,8 +7,10 @@ export const endpoints = {
     halls: `${SERVER_CONTEXT}/api/halls/`,
     login: `${SERVER_CONTEXT}/api/login/`,
     'current-user': `${SERVER_CONTEXT}/api/current-user/`,
-    register: `${SERVER_CONTEXT}/api/users/`,
+    register: `${SERVER_CONTEXT}/api/user/`,
     menu: `${SERVER_CONTEXT}/api/menu/`,
+    branch: `${SERVER_CONTEXT}/api/branch/`,
+    service: `${SERVER_CONTEXT}/api/service/`,
     // pay: `${SERVER_CONTEXT}/api/pay/`,
     // details: (productId) => `${SERVER_CONTEXT}/api/products/${productId}/`,
     // comments: (productId) =>
@@ -28,4 +30,3 @@ export const authApi = () => {
 export default axios.create({
     baseURL: SERVER,
 });
-//http://localhost:8080/QL_TiecCuoi/api/halls/

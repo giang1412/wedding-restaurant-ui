@@ -3,7 +3,9 @@ import styles from './Register.module.scss';
 import Button from '~/components/Button';
 import { useRef, useState } from 'react';
 import Apis, { endpoints } from '~/utils/Apis';
-
+import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 const cx = classNames.bind(styles);
 
 function Register() {
@@ -13,11 +15,13 @@ function Register() {
         firstName: '',
         lastName: '',
         email: '',
+        phoneNumber: '',
         confirmPass: '',
     });
     const [err, setErr] = useState(null);
     const [loading, setLoading] = useState(false);
-    const avatar = useRef();
+    const profileImage = useRef();
+    const nav = useNavigate();
 
     const register = (evt) => {
         evt.preventDefault();
@@ -28,22 +32,21 @@ function Register() {
             for (let field in user)
                 if (field !== 'confirmPass') form.append(field, user[field]);
 
-            form.append('avatar', avatar.current.files[0]);
+            form.append('profileImage', profileImage.current.files[0]);
 
             setLoading(true);
+            console.log(form);
             let res = await Apis.post(endpoints['register'], form);
             if (res.status === 201) {
-                //nav("/login");
+                nav('/login');
             } else setErr('Hệ thống bị lỗi!');
         };
-
         if (user.password === user.confirmPass) process();
         else {
             setErr('Mật khẩu KHÔNG khớp!');
         }
     };
     const change = (evt, field) => {
-        // setUser({...user, [field]: evt.target.value})
         setUser((current) => {
             return { ...current, [field]: evt.target.value };
         });
@@ -51,6 +54,7 @@ function Register() {
     return (
         <div className={cx('wrapper')}>
             <h1 className={cx('title')}>ĐĂNG KÝ</h1>
+            {err === null ? '' : alert(err)}
             <form className={cx('form-login')} onSubmit={register}>
                 <div className={cx('form-group')}>
                     <input
@@ -80,7 +84,16 @@ function Register() {
                     <input
                         className={cx('form-control')}
                         type="text"
+                        placeholder="Enter phone..."
+                        onChange={(e) => change(e, 'phoneNumber')}
+                    />
+                </div>
+                <div className={cx('form-group')}>
+                    <input
+                        className={cx('form-control')}
+                        type="text"
                         placeholder="Enter username..."
+                        value={user.username}
                         onChange={(e) => change(e, 'username')}
                     />
                 </div>
@@ -89,6 +102,7 @@ function Register() {
                         className={cx('form-control')}
                         type="password"
                         placeholder="Enter password..."
+                        value={user.password}
                         onChange={(e) => change(e, 'password')}
                     />
                 </div>
@@ -96,14 +110,29 @@ function Register() {
                     <input
                         className={cx('form-control')}
                         type="password"
+                        value={user.confirmPass}
                         placeholder="Enter confirm password..."
                         onChange={(e) => change(e, 'confirmPass')}
                     />
                 </div>
+                <div className={cx('form-group')}>
+                    <input
+                        className={cx('form-control')}
+                        type="file"
+                        ref={profileImage}
+                    />
+                </div>
                 <div className={cx('btn-login')}>
-                    <Button type="submit" primary>
-                        ĐĂNG KÝ
-                    </Button>
+                    {loading === true ? (
+                        <FontAwesomeIcon
+                            className={cx('loading')}
+                            icon={faSpinner}
+                        />
+                    ) : (
+                        <Button type="submit" primary>
+                            ĐĂNG KÝ
+                        </Button>
+                    )}
                 </div>
             </form>
         </div>

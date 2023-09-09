@@ -2,7 +2,7 @@
     display: flex;
     margin-top: var(--default-layout-header-height);
     width: var(--default-layout-home-width);
-    height: 650px;
+    min-height: 750px;
     text-align: center;
     flex-direction: column;
 }
@@ -18,7 +18,26 @@
 .form-group {
     margin-bottom: 10px;
 }
+.loading {
+    width: 30px;
+    height: 30px;
+    // position: absolute;
+    // right: calc(var(--search-button-width) + 16px);
+    // top: 50%;
+    transform: translateY(-50%);
+    color: rgba(22, 24, 35, 0.34);
+    cursor: pointer;
+    animation: spinner 0.8s linear infinite;
+}
 
+@keyframes spinner {
+    from {
+        transform: translateY(-50%) rotate(0);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
 .form-control {
     background: #f1f3f7;
     border: none !important;
@@ -27,6 +46,7 @@
     padding-right: 200px;
     padding-left: 20px;
     height: 56px;
+    width: 503px;
     font-size: 1em;
     font-weight: 500;
 }

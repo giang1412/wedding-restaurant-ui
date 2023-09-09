@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './BranchItem.module.scss';
@@ -13,4 +14,9 @@ function BranchItem({ image, title, address }) {
     );
 }
 
+BranchItem.propTypes = {
+    image: PropTypes.string,
+    title: PropTypes.string,
+    address: PropTypes.string,
+};
 export default BranchItem;

@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import classNames from 'classnames/bind';
-import styles from './Hall.module.scss';
-import MenuHall from '~/components/MenuHall';
+import { useEffect, useState } from 'react';
 import HallItem from '~/components/HallItem';
-import { useState, useEffect } from 'react';
+import MenuHall from '~/components/MenuHall';
 import Apis, { endpoints } from '~/utils/Apis';
+import styles from './Hall.module.scss';
 const cx = classNames.bind(styles);
 
 function Hall() {
@@ -31,7 +31,6 @@ function Hall() {
         setSelectedHall(hall);
     };
 
-    console.log(data);
     return (
         <div className={cx('wrapper')}>
             <MenuHall halls={data} onItemClick={handleHallClick} />

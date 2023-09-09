@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './HallItem.module.scss';
@@ -18,5 +19,7 @@ function HallItem({ hall }) {
         </div>
     );
 }
-
+HallItem.propTypes = {
+    hall: PropTypes.object,
+};
 export default HallItem;

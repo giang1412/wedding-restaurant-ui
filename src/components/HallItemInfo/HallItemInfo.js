@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './HallItemInfo.module.scss';
 import Button from '~/components/Button';
@@ -13,5 +13,8 @@ function HallItemInfo({ hall, onItemClick }) {
         </Button>
     );
 }
-
+HallItemInfo.propTypes = {
+    hall: PropTypes.object,
+    onItemClick: PropTypes.func,
+};
 export default HallItemInfo;

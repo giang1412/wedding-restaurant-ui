@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
-import styles from './RestaurantMenu.module.scss';
+import { useEffect, useState } from 'react';
 import MenuItem from '~/components/MenuItem';
 import Apis, { endpoints } from '~/utils/Apis';
+import styles from './RestaurantMenu.module.scss';
 const cx = classNames.bind(styles);
 function RestaurantMenu() {
     // const listMenu = [
@@ -56,7 +56,6 @@ function RestaurantMenu() {
         loadMenu();
     }, []);
 
-    console.log(data);
     return (
         <div className={cx('wrapper')}>
             <h2 className={cx('title')}>THỰC ĐƠN TỰ CHỌN</h2>

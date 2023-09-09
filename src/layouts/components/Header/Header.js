@@ -35,9 +35,9 @@ function Header() {
                     <Link to={`/service`}>
                         <Button text>CÁC DỊCH VỤ</Button>
                     </Link>
-                    <Link to={`/feedback`}>
+                    {/* <Link to={`/feedback`}>
                         <Button text>PHẢN HỒI</Button>
-                    </Link>
+                    </Link> */}
                 </div>
 
                 <div className={cx('btn-register')}>

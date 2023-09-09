@@ -1,6 +1,8 @@
 import classNames from 'classnames/bind';
-import styles from './RestaurantService.module.scss';
+import { useEffect, useState } from 'react';
 import MenuItem from '~/components/MenuItem';
+import Apis, { endpoints } from '~/utils/Apis';
+import styles from './RestaurantService.module.scss';
 const cx = classNames.bind(styles);
 function RestaurantService() {
     const listService = [
@@ -41,6 +43,19 @@ function RestaurantService() {
             price: 300000,
         },
     ];
+
+    const [data, setData] = useState([]);
+    const loadService = async () => {
+        try {
+            let res = await Apis.get(endpoints['service']);
+            setData(res.data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+    useEffect(() => {
+        loadService();
+    }, []);
     return (
         <div className={cx('wrapper')}>
             <h1 className={cx('title')}>DỊCH VỤ KHÁC</h1>
@@ -50,10 +65,10 @@ function RestaurantService() {
                 hảo cho các cặp đôi.
             </p>
             <div className={cx('list-item')}>
-                {listService.map((value) => (
+                {data.map((value) => (
                     <MenuItem
                         image={value.image}
-                        name={value.name}
+                        name={value.serviceName}
                         price={value.price}
                     />
                 ))}

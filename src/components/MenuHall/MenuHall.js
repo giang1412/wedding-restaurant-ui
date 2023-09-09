@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './MenuHall.module.scss';
 import HallIemInfo from '~/components/HallItemInfo';
@@ -19,5 +19,8 @@ function MenuHall({ halls, onItemClick }) {
         </div>
     );
 }
-
+MenuHall.propTypes = {
+    halls: PropTypes.array,
+    onItemClick: PropTypes.func,
+};
 export default MenuHall;

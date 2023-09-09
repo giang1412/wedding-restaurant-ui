@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './PageWrap.module.scss';
 import ImageHome from '~/components/ImageHome';
@@ -22,5 +22,7 @@ function PageWrap({ ...props }) {
         </div>
     );
 }
-
+PageWrap.propTypes = {
+    props: PropTypes.node,
+};
 export default PageWrap;

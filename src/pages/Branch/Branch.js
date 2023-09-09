@@ -1,7 +1,9 @@
 import classNames from 'classnames/bind';
-import styles from './Branch.module.scss';
-import BranchItem from '~/components/BranchItem';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import BranchItem from '~/components/BranchItem';
+import Apis, { endpoints } from '~/utils/Apis';
+import styles from './Branch.module.scss';
 const cx = classNames.bind(styles);
 function Branch() {
     const productsBranch = [
@@ -48,17 +50,30 @@ function Branch() {
             address: '431 Hoàng Văn Thụ, Phường 4, Quận Tân Bình',
         },
     ];
+
+    const [data, setData] = useState([]);
+    const loadBranch = async () => {
+        try {
+            let res = await Apis.get(endpoints['branch']);
+            setData(res.data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+    useEffect(() => {
+        loadBranch();
+    }, []);
     return (
         <div className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <h2 className={cx('title')}>TRUNG TÂM TIỆC CƯỚI</h2>
                 <Link to={`/menu`} className={cx('branch-item')}>
-                    {productsBranch.map((product) => (
+                    {data.map((value) => (
                         <BranchItem
-                            key={product.id}
-                            image={product.image}
-                            title={product.title}
-                            address={product.address}
+                            key={value.branchID}
+                            image={value.image}
+                            title={value.branchName}
+                            address={value.address}
                         />
                     ))}
                 </Link>

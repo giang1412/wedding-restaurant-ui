@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './MenuItem.module.scss';
 
@@ -22,4 +22,9 @@ function MenuItem({ image, name, price }) {
     );
 }
 
+MenuItem.propTypes = {
+    image: PropTypes.string,
+    name: PropTypes.string,
+    price: PropTypes.number,
+};
 export default MenuItem;

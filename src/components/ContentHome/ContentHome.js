@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import styles from './ContentHome.module.scss';
 import { Link } from 'react-router-dom';
 import Button from '~/components/Button';
+import PropTypes from 'prop-types';
 const cx = classNames.bind(styles);
 function ContentHome({ to, title, content }) {
     return (
@@ -17,5 +18,9 @@ function ContentHome({ to, title, content }) {
         </div>
     );
 }
-
+ContentHome.propTypes = {
+    to: PropTypes.string,
+    title: PropTypes.string,
+    content: PropTypes.string,
+};
 export default ContentHome;

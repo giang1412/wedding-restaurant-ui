@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './ImageHome.module.scss';
 
@@ -10,5 +10,8 @@ function ImageHome({ src, alt }) {
         </div>
     );
 }
-
+ImageHome.propTypes = {
+    src: PropTypes.string,
+    alt: PropTypes.string,
+};
 export default ImageHome;
