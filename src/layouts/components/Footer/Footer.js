@@ -9,12 +9,12 @@ const Footer = () => {
                 <div className={cx('footer-content')}>
                     <div className={cx('footer-column')}>
                         <h3 className={cx('footer-column-title')}>
-                            Về chúng tôi
+                            Nhà hàng tiệc cưới GIANG SƠN
                         </h3>
                         <p className={cx('footer-column-text')}>
-                            Trung tâm tiệc cưới Adora tập trung vào việc tổ chức
-                            các buổi tiệc cưới đáng nhớ và không quên cho khách
-                            hàng.
+                            Trung tâm tiệc cưới Giang Sơn tập trung vào việc tổ
+                            chức các buổi tiệc cưới đáng nhớ và không quên cho
+                            khách hàng.
                         </p>
                     </div>
                     <div className={cx('footer-column')}>

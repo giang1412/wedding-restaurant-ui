@@ -17,7 +17,7 @@ function Home() {
             id: 1,
             title: 'TRUNG TÂM TIỆC CƯỚI',
             content:
-                'Các cặp đôi luôn chia sẻ với chúng tôi về điều mà họ thích nhất tại Adora, chính là gu thẩm mĩ tinh tế, thanh lịch. Với thế mạnh sẵn có và mong muốn tất cả các sự kiện...',
+                'Các cặp đôi luôn chia sẻ với chúng tôi về điều mà họ thích nhất tại GiangSon, chính là gu thẩm mĩ tinh tế, thanh lịch. Với thế mạnh sẵn có và mong muốn tất cả các sự kiện...',
             img: 'https://riversidepalace.vn/multidata/unnamed.jpg',
             to: `/branch`,
         },
@@ -46,7 +46,7 @@ function Home() {
             to: `/service`,
         },
     ];
-    const listItem = listData.map((value, index) => ( 
+    const listItem = listData.map((value, index) => (
         <PageWrap
             key={value.id}
             id={value.id}

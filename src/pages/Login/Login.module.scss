@@ -2,7 +2,7 @@
     display: flex;
     margin-top: var(--default-layout-header-height);
     width: var(--default-layout-home-width);
-    min-height: 750px;
+    min-height: 850px;
     text-align: center;
     flex-direction: column;
 }
@@ -14,12 +14,13 @@
 }
 
 .form-group {
-    margin-bottom: 10px;
+    height: 50px;
+    margin: 40px;
 }
 
 .form-control {
     background: #f1f3f7;
-    border: none !important;
+    border: #ccc solid 1px;
     box-shadow: none !important;
     height: auto;
     padding-right: 200px;
@@ -29,6 +30,12 @@
     font-size: 1em;
     font-weight: 500;
 }
+.error {
+    color: red;
+    display: flex;
+    justify-content: center;
+    margin-top: 4px;
+}
 .btn-login {
-    margin-top: 30px;
+    margin-top: 70px;
 }
